@@ -6,8 +6,8 @@
     <header class="p-6 flex justify-between items-center text-white">
       <h1 class="text-2xl font-bold">CryptoPlatform</h1>
       <nav class="space-x-4 flex gap-4">
-        <button @click="handleLogin" class="bg-white text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">ورود</button>
-        <button @click="handleSignUp" class="bg-purple-500 px-4 py-2 rounded-lg font-semibold hover:bg-purple-600 transition">ثبت‌نام</button>
+         <NuxtLink to="/user/" class="bg-white text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">ورود</NuxtLink>
+         <NuxtLink to="/user/" class="bg-purple-500 px-4 py-2 rounded-lg font-semibold hover:bg-purple-600 transition">ثبت‌نام</NuxtLink>
       </nav>
     </header>
 
@@ -18,8 +18,8 @@
         معاملات سریع، امن و ساده. با ما سرمایه‌گذاری هوشمند را تجربه کنید.
       </p>
       <div class="space-x-4 flex gap-4">
-        <button @click="handleSignUp" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">شروع کنید</button>
-        <button @click="handleLogin" class="bg-transparent border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition">ورود</button>
+        <NuxtLink to="/user/" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">شروع کنید</NuxtLink>
+         <NuxtLink to="/user/" class="bg-transparent border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition">ورود</NuxtLink>
       </div>
     </section>
 
@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
     import Navigation from '~/components/navigations/navigation.vue';
 
     const handleLogin = () => {

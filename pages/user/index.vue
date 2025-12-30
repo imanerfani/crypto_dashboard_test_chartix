@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
   import { definePageMeta } from "~/node_modules/nuxt/dist/pages/runtime/composables";
   import { ref, computed, onMounted } from 'vue'
   import { useFavorites } from '~/composables/useFavorites';
@@ -81,7 +81,7 @@ onMounted(() => {
         <Section title="Top 5 Losers">
           <h2 class="text-2xl font-bold mb-4">پر ضررترین ها</h2>
           <div class="grid md:grid-cols-5 gap-4">
-            <CardsCoinCards v-for="(coin, index) in topLosers" :key="'coinn_' + index" :coin="coin" @toggle-fav="toggle" />
+            <CardsCoinCards @click="goToCoin(coin.id)" v-for="(coin, index) in topLosers" :key="'coinn_' + index" :coin="coin" @toggle-fav="toggle" />
           </div>
         </Section>
 
@@ -89,7 +89,7 @@ onMounted(() => {
         <Section title="Favorites">
           <h2 class="text-2xl font-bold mb-4">محبوب ترین ها</h2>
           <div v-if="favoriteCoins.length" class="grid md:grid-cols-5 gap-4">
-            <CardsCoinCards v-for="(coin, index) in favoriteCoins" :key="'coinf_' + index" :coin="coin" @toggle-fav="toggle" />
+            <CardsCoinCards @click="goToCoin(coin.id)" v-for="(coin, index) in favoriteCoins" :key="'coinf_' + index" :coin="coin" @toggle-fav="toggle" />
           </div>
           <div v-else class="text-center text-gray-500 py-4">
             هیچ ارز مورد علاقه‌ای وجود ندارد
